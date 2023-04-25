@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div>
-            <h1>this is a footer</h1>
+            <p className='d-flex justify-content-center'><small>Copyright warning my website</small></p>
         </div>
     );
 };
