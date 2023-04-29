@@ -9,9 +9,7 @@ import { Link } from 'react-router-dom';
 
 const AllNews = ({ news }) => {
 
-    console.log(news)
-
-    const { title, total_view, details, image_url, thumbnail_url, author, published_date, rating } = news
+    const { title, total_view, details, image_url, thumbnail_url, author, published_date, rating, _id } = news
 
     return (
         <div>
@@ -31,7 +29,7 @@ const AllNews = ({ news }) => {
                     <Card.Title>{title}</Card.Title>
                     <Card.Img variant="top" src={image_url} />                <Card.Text>
                         {
-                            details.length < 250 ? <>{details}</> : <>{details.slice(0, 250)}.... <Link to="/news/${_id}">Read</Link></>
+                            details.length < 250 ? <>{details}</> : <>{details.slice(0, 250)}.... <Link to={`/news/${_id}`}>Read</Link></>
                         }
                     </Card.Text>
                 </Card.Body>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useLoaderData } from 'react-router-dom/dist';
-import News from '../../../Share/News/News';
 import AllNews from '../AllNews/AllNews';
 
 const Categories = () => {
