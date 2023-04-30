@@ -13,7 +13,7 @@ const RightNav = () => {
             <Button variant="outline-secondary"><FaGithub /> Login With Github</Button>
             <div className='mt-5'>
                 <h4 className='fw-bold text-secondary'>Find Us On</h4>
-                <ListGroup className='mt-4'>
+                <ListGroup style={{cursor: 'pointer'}} className='mt-4'>
                     <ListGroup.Item className='p-3'><FaFacebook className='text-primary fs-4'/> Facebook</ListGroup.Item>
                     <ListGroup.Item className='p-3'><FaTwitter className='text-info fs-4'/> Twitter</ListGroup.Item>
                     <ListGroup.Item className='p-3'><FaInstagram className='text-danger fs-4'/> Instagram</ListGroup.Item>
