@@ -1,11 +1,15 @@
 import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import { useState } from 'react';
 
 const Register = () => {
 
     const { createUser } = useContext(AuthContext)
+
+    const [accept, setAccept] = useState(false)
+    const navigate = useNavigate()
 
     const handleRegistation = event => {
         event.preventDefault()
@@ -21,11 +25,16 @@ const Register = () => {
             .then(result => {
                 const signUp = result.user
                 console.log(signUp)
+                navigate('/category/0')
             })
             .catch(error => {
                 console.error(error)
             })
 
+    }
+
+    const handleTerms = evetn => {
+        setAccept(evetn.target.checked)
     }
 
 
@@ -52,9 +61,12 @@ const Register = () => {
                     <Form.Control style={{ height: '55px' }} type="password" name="password" placeholder="Enter your password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Accept Terms & Condition" />
+                    <Form.Check 
+                    onClick={handleTerms}
+                    type="checkbox" 
+                    label={<>Accept <Link to="/terms" className='text-decoration-none'>Terms & Condition</Link></>} />
                 </Form.Group>
-                <Button className="w-100 fw-bold" style={{ height: '45px' }} variant="secondary" type="submit">
+                <Button disabled={!accept} className="w-100 fw-bold" style={{ height: '45px' }} variant="secondary" type="submit">
                     Register
                 </Button>
                 <br />
