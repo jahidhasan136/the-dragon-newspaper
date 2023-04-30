@@ -39,7 +39,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element: <Categories></Categories>,
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+                loader: ({ params }) => fetch(`https://the-dragon-newspaper-server-nurmorshed7987-gmailcom.vercel.app/categories/${params.id}`)
             }
         ]
     },
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element: <PrivateRoute><SingleNews></SingleNews></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`)
+                loader: ({ params }) => fetch(`https://the-dragon-newspaper-server-nurmorshed7987-gmailcom.vercel.app/news/${params.id}`)
             }
         ]
     }
