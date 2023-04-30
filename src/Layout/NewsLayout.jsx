@@ -11,8 +11,7 @@ const NewsLayout = () => {
     return (
         <div>
             <Header></Header>
-            <NavigationBar></NavigationBar>
-            <Container>
+            <Container className='mt-5'>
                 <Row>
                     <Col sm={9}><Outlet></Outlet></Col>
                     <Col sm={3}><RightNav></RightNav></Col>

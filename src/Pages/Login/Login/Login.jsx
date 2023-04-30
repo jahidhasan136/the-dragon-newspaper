@@ -1,11 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Login = () => {
+
+
+    const {login} = useContext(AuthContext)
+
+    const navigate = useNavigate()
+
+    const handleSingin = (event) => {
+        event.preventDefault()
+        const from = event.target
+        const email = from.email.value
+        const password = from.password.value
+        
+        console.log(email, password)
+
+        login(email, password)
+        .then(result => {
+            const loggedUser = result.user
+            console.log(loggedUser)
+            navigate('/category/0')
+        })
+        .catch(error => {
+            console.error(error)
+        })
+
+    }
+
     return (
         <Container className="d-flex align-items-center">
-            <Form className="mx-auto bg-light rounded-2" style={{ width: '752px', marginTop: '30px', padding: '50px' }}>
+            <Form onSubmit={handleSingin} className="mx-auto bg-light rounded-2" style={{ width: '752px', marginTop: '30px', padding: '50px' }}>
                 <h2 className='text-center fw-bolder mb-5'>Login your accoutn</h2>
                 <hr className='mb-5 text-black-50' />
                 <Form.Group className="mb-3" controlId="formBasicEmail">
