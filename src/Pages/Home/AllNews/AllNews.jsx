@@ -22,7 +22,7 @@ const AllNews = ({ news }) => {
                     </div>
                     <div className='d-flex gap-3'>
                         <FaRegBookmark className='fs-5'></FaRegBookmark>
-                        <FaShareAlt className='fs-5'></FaShareAlt>
+                         <FaShareAlt className='fs-5'></FaShareAlt>
                     </div>
                 </Card.Header>
                 <Card.Body>

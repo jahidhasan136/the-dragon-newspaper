@@ -9,11 +9,11 @@ const Register = () => {
 
     const handleRegistation = event => {
         event.preventDefault()
-        const from = event.target
-        const name = from.name.value
-        const photo = from.photo.value
-        const email = from.email.value
-        const password = from.password.value
+        const form = event.target
+        const name = form.name.value
+        const photo = form.photo.value
+        const email = form.email.value
+        const password = form.password.value
 
         console.log(name, photo, email, password)
 
