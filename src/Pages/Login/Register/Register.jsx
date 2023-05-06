@@ -3,10 +3,13 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { useState } from 'react';
+import useTitle from '../../Hooks/UseTitle';
 
 const Register = () => {
 
     const { createUser } = useContext(AuthContext)
+
+    useTitle('Registration')
 
     const [accept, setAccept] = useState(false)
     const navigate = useNavigate()
